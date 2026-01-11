@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/aom/static/css/main.e2fb59f6.css",
+    "main.css": "/aom/static/css/main.f6be0bcf.css",
     "main.js": "/aom/static/js/main.37e7de79.js",
     "static/media/D-DIN-Italic.otf": "/aom/static/media/D-DIN-Italic.95a6ef2d9bd0881a85b1.otf",
     "static/media/D-DINExp-Italic.otf": "/aom/static/media/D-DINExp-Italic.912cce24edda46cd4126.otf",
@@ -11,11 +11,11 @@
     "static/media/D-DINCondensed-Bold.otf": "/aom/static/media/D-DINCondensed-Bold.b6014535a6092a751baa.otf",
     "static/media/D-DINExp-Bold.otf": "/aom/static/media/D-DINExp-Bold.94894a698adbf58b47cb.otf",
     "index.html": "/aom/index.html",
-    "main.e2fb59f6.css.map": "/aom/static/css/main.e2fb59f6.css.map",
+    "main.f6be0bcf.css.map": "/aom/static/css/main.f6be0bcf.css.map",
     "main.37e7de79.js.map": "/aom/static/js/main.37e7de79.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2fb59f6.css",
+    "static/css/main.f6be0bcf.css",
     "static/js/main.37e7de79.js"
   ]
 }
