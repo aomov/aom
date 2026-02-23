@@ -1,0 +1,528 @@
+/* Parkour.css - Optimised */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+.parkour-body {
+  min-height: 100vh;
+  background: #2D2F2D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 100px 40px;
+  overflow: hidden;
+}
+
+/* Pattern — will-change keeps it on its own layer */
+.parkour-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(246, 138, 33, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(246, 138, 33, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: patternMove 20s linear infinite;
+  z-index: 0;
+  will-change: background-position;
+}
+
+@keyframes patternMove {
+  0%   { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+/* Static gradient — no animation needed */
+.parkour-gradient-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.parkour-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.parkour-header {
+  text-align: center;
+  margin-bottom: 80px;
+  animation: fadeInDown 1s ease-out both;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* box-shadow pulse is cheap — no filter */
+.parkour-badge {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #F68A21;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: inline-block;
+  padding: 8px 20px;
+  border: 2px solid #F68A21;
+  border-radius: 30px;
+  background: rgba(246, 138, 33, 0.1);
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(246, 138, 33, 0.3); }
+  50%       { box-shadow: 0 0 22px rgba(246, 138, 33, 0.6); }
+}
+
+.parkour-title {
+  font-family: 'D-DIN', 'D-DIN Condensed', sans-serif;
+  font-size: 5rem;
+  font-weight: 900;
+  color: #F4F5F6;
+  letter-spacing: 15px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #F4F5F6 0%, #F68A21 50%, #FED933 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+  /* Single static drop-shadow — not animated */
+  filter: drop-shadow(0 0 20px rgba(246, 138, 33, 0.5));
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+.parkour-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #F4F5F6;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/* box-shadow pulse instead of filter — GPU-friendly */
+.title-underline {
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #F68A21, #FED933, #F68A21, transparent);
+  margin: 25px auto 0;
+  border-radius: 2px;
+  animation: underlineGlow 2s ease-in-out infinite;
+}
+
+@keyframes underlineGlow {
+  0%, 100% { box-shadow: 0 0 8px rgba(246, 138, 33, 0.5); }
+  50%       { box-shadow: 0 0 20px rgba(254, 217, 51, 0.8); }
+}
+
+/* ── Content Grid ── */
+.parkour-content-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 50px;
+  align-items: start;
+  animation: fadeInUp 1s ease-out 0.2s both;
+  margin-bottom: 60px;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Video ── */
+.parkour-video-section { position: relative; }
+
+.video-frame {
+  position: relative;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(246, 138, 33, 0.1), rgba(254, 217, 51, 0.05));
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.parkour-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Removed backdrop-filter — GPU killer */
+.video-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 2;
+}
+
+.video-overlay:hover { background: rgba(0, 0, 0, 0.3); }
+
+/* Simple scale pulse — removed filter animation */
+.play-button {
+  transition: transform 0.3s ease;
+  animation: playPulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(246, 138, 33, 0.7));
+}
+
+@keyframes playPulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.08); }
+}
+
+.video-overlay:hover .play-button { transform: scale(1.2); }
+
+.video-cta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #F4F5F6;
+  margin-top: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Energy lines — opacity only, no filter */
+.energy-line {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, #F68A21, transparent);
+  height: 2px;
+  z-index: 4;
+  opacity: 0;
+  animation: energyFlow 3s ease-in-out infinite;
+}
+
+.line-1 { top: 0; left: 0; right: 0; animation-delay: 0s; }
+.line-3 { bottom: 0; left: 0; right: 0; animation-delay: 1.5s; }
+
+.line-2 {
+  right: 0; top: 0; bottom: 0;
+  width: 2px; height: auto;
+  background: linear-gradient(180deg, transparent, #F68A21, transparent);
+  animation-delay: 0.75s;
+}
+
+.line-4 {
+  left: 0; top: 0; bottom: 0;
+  width: 2px; height: auto;
+  background: linear-gradient(180deg, transparent, #F68A21, transparent);
+  animation-delay: 2.25s;
+}
+
+@keyframes energyFlow {
+  0%, 100% { opacity: 0; }
+  50%       { opacity: 1; }
+}
+
+/* ── FAQ ── */
+.parkour-info-section { display: flex; flex-direction: column; }
+.faq-section-video { margin-top: 0; }
+
+.faq-title-small {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #F68A21;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  opacity: 0.9;
+  position: relative;
+  display: inline-block;
+}
+
+.faq-title-small::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #F68A21, #FED933, transparent);
+  border-radius: 2px;
+}
+
+.faq-compact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 25px;
+}
+
+.faq-item {
+  position: relative;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.faq-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(246, 140, 33, 0.33), transparent);
+}
+
+.faq-item:last-child { margin-bottom: 0; }
+.faq-item:last-child::after { display: none; }
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 4px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  user-select: none;
+}
+
+.faq-question-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #F4F5F6;
+  opacity: 0.9;
+}
+
+.faq-arrow {
+  font-size: 1rem;
+  color: #F68A21;
+  transition: transform 0.3s ease;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.faq-arrow.open { transform: rotate(45deg); }
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-answer.open { max-height: 300px; }
+
+.faq-answer-content {
+  padding: 4px 4px 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: #F4F5F6;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+
+.faq-answer-content p { margin: 0; }
+
+/* ── Intro Row ── */
+.parkour-intro-row {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* ── Feature Cards ── */
+.parkour-features-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  margin: 0 auto 80px;
+  max-width: 1200px;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.info-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  min-height: 200px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover { transform: translateX(8px); }
+
+/* Static drop-shadow — removed hover filter change */
+.card-icon {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  display: inline-block;
+  filter: drop-shadow(0 0 12px rgba(246, 138, 33, 0.4));
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover .card-icon { transform: translateY(-3px); }
+
+.card-icon-img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(246, 138, 33, 0.4));
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover .card-icon-img { transform: translateY(-3px); }
+
+.info-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #F4F5F6;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 10px;
+  background-image: linear-gradient(90deg, #F68A21 0%, #FED933 50%, transparent 100%);
+  background-size: 50px 2px;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s ease;
+}
+
+/* Removed filter on hover h3 — causes repaint */
+.info-card:hover h3 { background-size: 80px 2px; }
+
+.info-card p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #F4F5F6;
+  line-height: 1.7;
+  opacity: 0.85;
+  flex-grow: 1;
+  transition: opacity 0.3s ease;
+}
+
+.info-card:hover p { opacity: 1; }
+
+.info-card p strong {
+  color: #F4F5F6;
+  font-weight: 700;
+  background: linear-gradient(135deg, rgba(246, 138, 33, 0.15), rgba(254, 217, 51, 0.1));
+  padding: 0 4px;
+  border-radius: 2px;
+}
+
+/* ── Book Now ── */
+.book-now-section {
+  text-align: center;
+  margin-top: 80px;
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.book-now-button {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2D2F2D;
+  background: linear-gradient(135deg, #F68A21, #FED933);
+  padding: 18px 50px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(246, 138, 33, 0.4);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+}
+
+/* Shimmer — translateX only, compositor-friendly */
+.book-now-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  transition: left 0.5s ease;
+}
+
+.book-now-button:hover::before { left: 100%; }
+
+.book-now-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(246, 138, 33, 0.6);
+}
+
+.book-now-button:active { transform: translateY(-2px); }
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
+  .parkour-features-row { gap: 40px; }
+}
+
+@media (max-width: 1024px) {
+  .parkour-content-grid { grid-template-columns: 1fr; gap: 50px; }
+  .parkour-title { font-size: 4rem; letter-spacing: 10px; }
+  .parkour-features-row { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .parkour-body { padding: 80px 20px; }
+  .parkour-header { margin-bottom: 60px; }
+  .parkour-title { font-size: 3rem; letter-spacing: 6px; }
+  .parkour-subtitle { font-size: 1.1rem; }
+  .parkour-content-grid { gap: 40px; }
+  .video-frame { padding: 15px; }
+  .faq-section-video { margin-top: 20px; }
+  .faq-title-small { font-size: 0.85rem; margin-bottom: 12px; }
+  .faq-question { padding: 9px 8px; }
+  .faq-question-text { font-size: 0.74rem; }
+  .faq-answer-content { padding: 8px 8px 9px; font-size: 0.7rem; }
+  .book-now-button { font-size: 1rem; padding: 16px 40px; letter-spacing: 2px; }
+}
+
+@media (max-width: 480px) {
+  .parkour-title { font-size: 2.2rem; letter-spacing: 4px; }
+  .parkour-badge { font-size: 0.8rem; padding: 6px 15px; }
+  .card-icon { font-size: 1.5rem; }
+  .info-card h3 { font-size: 1.1rem; }
+  .info-card p { font-size: 0.8rem; }
+  .book-now-button { font-size: 0.9rem; padding: 14px 35px; }
+}
