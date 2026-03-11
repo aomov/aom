@@ -10,9 +10,8 @@ import Events from './components/Events';
 import Admin from './components/Admin';
 import Pricing from './components/Pricing';
 import Footer from './components/Footer';
+import EventPage from './components/EventPage';
 
-
-// Home page component
 function HomePage() {
   return (
     <>
@@ -25,7 +24,6 @@ function HomePage() {
       <Events />
       <Pricing />
       <Footer />
-      
     </>
   );
 }
@@ -34,11 +32,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Home route */}
         <Route path="/" element={<HomePage />} />
-        
-        {/* Admin route */}
         <Route path="/AdminAom" element={<Admin />} />
+        <Route path="/event/:id" element={<EventPage />} />
       </Routes>
     </Router>
   );

@@ -357,3 +357,23 @@
   .event-date,
   .event-description { font-size: .85rem; }
 }
+
+
+.event-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  transition: all 0.25s;
+}
+
+.event-card:hover .event-read-more {
+  letter-spacing: 0.28em;
+  color: var(--gold);
+}
