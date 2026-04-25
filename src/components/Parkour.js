@@ -3,6 +3,12 @@ import '../styles/Parkour.css';
 
 const parkourIcon = `${process.env.PUBLIC_URL}/p-icon.png`;
 
+const icon1 = `${process.env.PUBLIC_URL}/park.svg`
+const icon2 = `${process.env.PUBLIC_URL}/park1.png`
+const icon3 = `${process.env.PUBLIC_URL}/park2.svg`
+const icon4 = `${process.env.PUBLIC_URL}/park3.svg`
+
+
 // FAQ Item Component with Dropdown
 const FAQItem = ({ question, children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -125,7 +131,7 @@ function Parkour() {
         <div className="parkour-intro-row">
           <div className="info-card intro-card">
             <div className="card-icon">
-              <img src={parkourIcon} alt="Parkour" className="card-icon-img" />
+              <img src={icon1} alt="Parkour" className="card-icon-img" />
             </div>
             <h3>What is Parkour?</h3>
             <p>
@@ -141,7 +147,7 @@ function Parkour() {
           
           {/* Mental Balance Card */}
           <div className="info-card balance-card">
-            <div className="card-icon">🧠</div>
+            <div className="card-icon"><img src={icon2} alt="" className='card-icon-2' /></div>
             <h3>Mental Balance</h3>
             <p>
               Parkour teaches you how to <strong>TRUST YOURSELF</strong>, to learn to <strong>BE CAREFUL</strong>. 
@@ -153,7 +159,7 @@ function Parkour() {
 
           {/* Focus Card */}
           <div className="info-card focus-card">
-            <div className="card-icon">🎯</div>
+            <div className="card-icon"><img src={icon3} alt="" className='card-icon-2' /></div>
             <h3>Focus</h3>
             <p>
               This Lifestyle pushes you to <strong>UNLOCK</strong> your innate ability to <strong>FOCUS</strong> and <strong>SHARPEN</strong> it to the point, 
@@ -163,7 +169,7 @@ function Parkour() {
 
           {/* Creativity Card */}
           <div className="info-card creativity-card">
-            <div className="card-icon">🎨</div>
+            <div className="card-icon"><img src={icon4} alt="" className='card-icon-2' /></div>
             <h3>Creativity</h3>
             <p>
               Every rock, every wall, or a simple bench can be your <strong>PLAYGROUND</strong>. This <strong>MOVEMENT</strong> practice lets you <strong>REWIRE</strong> your brain, 

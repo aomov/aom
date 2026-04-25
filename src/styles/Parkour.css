@@ -526,3 +526,7 @@
   .info-card p { font-size: 0.8rem; }
   .book-now-button { font-size: 0.9rem; padding: 14px 35px; }
 }
+
+.card-icon-2{
+  height: 60px;
+}

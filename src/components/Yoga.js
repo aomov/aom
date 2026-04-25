@@ -3,6 +3,10 @@ import '../styles/Yoga.css';
 import Book from './Book'; // Import the Book component
 
 const yogaIcon = `${process.env.PUBLIC_URL}/y-icon.png`;
+const icon1 = `${process.env.PUBLIC_URL}/med.svg`
+const icon2 = `${process.env.PUBLIC_URL}/med1.svg`
+const icon3 = `${process.env.PUBLIC_URL}/med2.svg`
+const icon4 = `${process.env.PUBLIC_URL}/med3.svg`
 
 function Yoga() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -88,7 +92,7 @@ function Yoga() {
               {/* What is FYSM Yoga Card - Full Width */}
               <div className="info-card intro-card">
                 <div className="card-icon">
-                  <img src={yogaIcon} alt="FYSM Yoga" className="card-icon-img" />
+                  <img src={icon1} alt="FYSM Yoga" className="card-icon-img" />
                 </div>
                 <h3>What is FYSM Yoga?</h3>
                 <h4 className="card-subtitle">The Fresh Yoga Synthesized Methodology</h4>
@@ -107,7 +111,7 @@ function Yoga() {
 
             {/* Modern Revolution Card */}
             <div className="info-card revolution-card">
-              <div className="card-icon">🔬</div>
+              <div className="card-icon"> <img src={icon3} alt="FYSM Yoga" className="card-icon-img" /></div>
               <h3>Modern Revolution</h3>
               <p>
                 FYSM Yoga is a revolutionary, <strong>science-backed system</strong> designed for modern people who seek maximum results in minimal time 
@@ -117,7 +121,7 @@ function Yoga() {
 
             {/* Fast Transformation Card */}
             <div className="info-card transformation-card">
-              <div className="card-icon">⚡</div>
+              <div className="card-icon"> <img src={icon2} alt="FYSM Yoga" className="card-icon-img" /></div>
               <h3>Fast Transformation</h3>
               <p>
                 FYSM delivers <strong>rapid improvements</strong> in flexibility, strength, posture, and mental clarity 
@@ -128,7 +132,7 @@ function Yoga() {
 
             {/* Safety First Card */}
             <div className="info-card safety-card">
-              <div className="card-icon">🛡️</div>
+              <div className="card-icon"> <img src={icon4} alt="FYSM Yoga" className="card-icon-img" /></div>
               <h3>Safety First</h3>
               <p>
                 FYSM eliminates unsafe postures from beginner levels. 

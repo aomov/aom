@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Footer.css';
 
-function Footer({ language = 'EN' }) {
+function Footer({ language = 'EN', tab = 'yoga' }) {
   const navItems = [
     { id: 'home',    label: language === 'EN' ? 'Home'        : 'მთავარი' },
     { id: 'parkour', label: language === 'EN' ? 'Disciplines'  : 'პარკური' },
@@ -13,9 +13,13 @@ function Footer({ language = 'EN' }) {
 
   const socials = [
     { label: 'Instagram', href: 'https://instagram.com', icon: 'IG' },
-    { label: 'Telegram',  href: 'https://t.me',          icon: 'TG' },
+    { label: 'Telegram',  href: tab === 'yoga' ? 'https://t.me/makeursekfcomfortable' : 'https://t.me/Ninja_Cheff', icon: 'TG' },
     { label: 'YouTube',   href: 'https://youtube.com',   icon: 'YT' },
   ];
+
+  const contact = tab === 'yoga'
+    ? { phone: 'tel:+995558108316', phoneLabel: '+995 558 10 83 16', telegram: 'https://t.me/makeursekfcomfortable', telegramLabel: '@makeursekfcomfortable' }
+    : { phone: 'tel:+995598780220', phoneLabel: '+995 598 78 02 20', telegram: 'https://t.me/Ninja_Cheff', telegramLabel: '@Ninja_Cheff' }
 
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -24,9 +28,7 @@ function Footer({ language = 'EN' }) {
   return (
     <footer className="footer">
       <div className="footer-pattern" />
-
       <div className="footer-container">
-
         <div className="footer-top">
 
           <div className="footer-brand">
@@ -57,13 +59,13 @@ function Footer({ language = 'EN' }) {
             <span className="footer-nav-label">
               {language === 'EN' ? 'Contact' : 'კონტაქტი'}
             </span>
-            <a href="tel:+995574065469" className="footer-contact-link">
+            <a href={contact.phone} className="footer-contact-link">
               <span className="footer-contact-icon">✆</span>
-              +995 574 065 469
+              {contact.phoneLabel}
             </a>
-            <a href="https://t.me/your_telegram" target="_blank" rel="noreferrer" className="footer-contact-link">
+            <a href={contact.telegram} target="_blank" rel="noreferrer" className="footer-contact-link">
               <span className="footer-contact-icon">✈</span>
-              Telegram
+              {contact.telegramLabel}
             </a>
             <p className="footer-location">
               <span className="footer-contact-icon">◎</span>

@@ -275,8 +275,7 @@
 .info-card:hover .card-icon { transform: translateY(-3px); }
 
 .card-icon-img {
-  width: 45px;
-  height: 45px;
+  width: 50px;
   object-fit: contain;
   filter: drop-shadow(0 0 12px rgba(246, 138, 33, 0.4));
   transition: transform 0.3s ease;
@@ -442,4 +441,11 @@
   .info-card h3 { font-size: 1.1rem; }
   .info-card p { font-size: 0.8rem; }
   .book-now-button { font-size: 0.9rem; padding: 14px 35px; }
+}
+
+/* დაამატე ეს: */
+@media (min-width: 1025px) {
+  .intro-card {
+    margin-top: 90px;
+  }
 }

@@ -119,6 +119,21 @@ const PARKOUR_PLANS = [
   },
 ]
 
+const CONTACT = {
+  yoga: {
+    phone: 'tel:+995558108316',
+    phoneLabel: '+995 558 10 83 16',
+    telegram: 'https://t.me/makeursekfcomfortable',
+    telegramLabel: '@makeursekfcomfortable',
+  },
+  parkour: {
+    phone: 'tel:+995598780220',
+    phoneLabel: '+995 598 78 02 20',
+    telegram: 'https://t.me/Ninja_Cheff',
+    telegramLabel: '@Ninja_Cheff',
+  },
+}
+
 function PlanCard({ plan }) {
   return (
     <div className="pricing-card">
@@ -158,6 +173,7 @@ function PlanCard({ plan }) {
 
 function Pricing() {
   const [tab, setTab] = useState('yoga')
+  const contact = CONTACT[tab]
 
   return (
     <div className="pricing-body" id='pricing'>
@@ -221,11 +237,11 @@ function Pricing() {
         <div className="pricing-cta">
           <p>Ready to start? Get in touch and we'll set everything up.</p>
           <div className="pricing-cta-btns">
-            <a href="tel:+995574065469" className="pricing-btn pricing-btn--primary">
-              ✆ &nbsp; Call Now
+            <a href={contact.phone} className="pricing-btn pricing-btn--primary">
+              ✆ &nbsp; {contact.phoneLabel}
             </a>
-            <a href="https://t.me/your_telegram" target="_blank" rel="noreferrer" className="pricing-btn pricing-btn--ghost">
-              ✈ &nbsp; Telegram
+            <a href={contact.telegram} target="_blank" rel="noreferrer" className="pricing-btn pricing-btn--ghost">
+              ✈ &nbsp; {contact.telegramLabel}
             </a>
           </div>
         </div>
