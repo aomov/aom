@@ -41,14 +41,14 @@ function Store() {
 
   const [initialCount, setInitialCount] = useState(getInitialItemCount());
 
-  React.useEffect(() => {
-    const handleResize = () => {
-      setInitialCount(window.innerWidth <= 768 ? 4 : 8);
-      setShowAll(false);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+ React.useEffect(() => {
+  const handleResize = () => {
+    setInitialCount(window.innerWidth <= 768 ? 4 : 8);
+    // წაშალე: setShowAll(false)  ← ეს იყო პრობლემა
+  };
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
 
   const itemsToShow = showAll ? items : items.slice(0, initialCount);
 

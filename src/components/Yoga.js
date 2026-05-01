@@ -55,14 +55,12 @@ function Yoga() {
                 
                 {/* Video Container */}
                 <div className="video-container">
-                  <video 
-                    id="yoga-video"
-                    className="yoga-video"
-                    controls
-                    poster={`${process.env.PUBLIC_URL}/yoga-thumbnail.jpg`}
-                  >
-                    <source src={yogaVideo} type="video/mp4" />
-                  </video>
+                 <video 
+  id="yoga-video"
+  className="yoga-video"
+  controls={isPlaying}
+  poster={`${process.env.PUBLIC_URL}/yoga-thumbnail.jpg`}
+></video>
                   
                   {/* Play Overlay */}
                   {!isPlaying && (

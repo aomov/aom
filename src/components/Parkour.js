@@ -70,15 +70,14 @@ function Parkour() {
               
               {/* Video Container */}
               <div className="video-container">
-                <video 
-                  id="parkour-video"
-                  className="parkour-video"
-                  controls
-                  poster={`${process.env.PUBLIC_URL}/parkour-thumbnail.jpg`}
-                >
-                  <source src={parkourVideo} type="video/mp4" />
-                </video>
-                
+               <video 
+  id="parkour-video"
+  className="parkour-video"
+  controls={isPlaying}  
+  poster={`${process.env.PUBLIC_URL}/parkour-thumbnail.jpg`}
+>
+  <source src={parkourVideo} type="video/mp4" />
+</video>
                 {/* Play Overlay */}
                 {!isPlaying && (
                   <div className="video-overlay" onClick={handlePlayVideo}>

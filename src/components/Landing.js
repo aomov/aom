@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Landing.css';
 
-const video = `${process.env.PUBLIC_URL}/video.mp4`;
+const video = `${process.env.PUBLIC_URL}/banner.mov`;
 
 function Landing() {
   const scrollToSection = (sectionId) => {
