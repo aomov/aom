@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../styles/Yoga.css';
-import Book from './Book'; // Import the Book component
 
 const yogaIcon = `${process.env.PUBLIC_URL}/y-icon.png`;
 const icon1 = `${process.env.PUBLIC_URL}/med.svg`
@@ -10,21 +9,9 @@ const icon4 = `${process.env.PUBLIC_URL}/med3.svg`
 
 function Yoga() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isBookOpen, setIsBookOpen] = useState(false); // State for Book modal
-
-  const yogaVideo = `${process.env.PUBLIC_URL}/video.mp4`;
 
   const handlePlayVideo = () => {
-    const video = document.getElementById('yoga-video');
-    if (video) {
-      video.play();
-      setIsPlaying(true);
-    }
-  };
-
-  // Toggle function for Book modal
-  const toggleBook = () => {
-    setIsBookOpen(!isBookOpen);
+    setIsPlaying(true);
   };
 
   return (
@@ -46,7 +33,7 @@ function Yoga() {
             <div className="title-underline"></div>
           </div>
 
-          {/* Main Content Grid - SAME AS PARKOUR */}
+          {/* Main Content Grid */}
           <div className="yoga-content-grid">
             
             {/* Left Side - Video with Creative Frame */}
@@ -55,16 +42,16 @@ function Yoga() {
                 
                 {/* Video Container */}
                 <div className="video-container">
-                 <video 
-  id="yoga-video"
-  className="yoga-video"
-  controls={isPlaying}
-  poster={`${process.env.PUBLIC_URL}/yoga-thumbnail.jpg`}
-></video>
-                  
-                  {/* Play Overlay */}
-                  {!isPlaying && (
-                    <div className="video-overlay" onClick={handlePlayVideo}>
+                  {!isPlaying ? (
+                    <div
+                      className="video-overlay"
+                      onClick={handlePlayVideo}
+                      style={{
+                        backgroundImage: 'url(https://img.youtube.com/vi/PJuzjUHSCwY/maxresdefault.jpg)',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                      }}
+                    >
                       <div className="play-button">
                         <svg viewBox="0 0 100 100" width="80" height="80">
                           <circle cx="50" cy="50" r="45" fill="none" stroke="#ffffffff" strokeWidth="3"/>
@@ -73,6 +60,15 @@ function Yoga() {
                       </div>
                       <p className="video-cta">Watch Demo</p>
                     </div>
+                  ) : (
+                    <iframe
+                      className="yoga-video"
+                      src="https://www.youtube.com/embed/PJuzjUHSCwY?autoplay=1"
+                      title="FYSM Yoga"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
                   )}
                 </div>
 
@@ -109,7 +105,9 @@ function Yoga() {
 
             {/* Modern Revolution Card */}
             <div className="info-card revolution-card">
-              <div className="card-icon"> <img src={icon3} alt="FYSM Yoga" className="card-icon-img" /></div>
+              <div className="card-icon">
+                <img src={icon3} alt="FYSM Yoga" className="card-icon-img" />
+              </div>
               <h3>Modern Revolution</h3>
               <p>
                 FYSM Yoga is a revolutionary, <strong>science-backed system</strong> designed for modern people who seek maximum results in minimal time 
@@ -119,43 +117,43 @@ function Yoga() {
 
             {/* Fast Transformation Card */}
             <div className="info-card transformation-card">
-              <div className="card-icon"> <img src={icon2} alt="FYSM Yoga" className="card-icon-img" /></div>
+              <div className="card-icon">
+                <img src={icon2} alt="FYSM Yoga" className="card-icon-img" />
+              </div>
               <h3>Fast Transformation</h3>
               <p>
                 FYSM delivers <strong>rapid improvements</strong> in flexibility, strength, posture, and mental clarity 
                 with sessions of <strong>20, 30, or 60 minutes</strong>.
               </p>
-             
             </div>
 
             {/* Safety First Card */}
             <div className="info-card safety-card">
-              <div className="card-icon"> <img src={icon4} alt="FYSM Yoga" className="card-icon-img" /></div>
+              <div className="card-icon">
+                <img src={icon4} alt="FYSM Yoga" className="card-icon-img" />
+              </div>
               <h3>Safety First</h3>
               <p>
                 FYSM eliminates unsafe postures from beginner levels. 
                 It follows a <strong>level-based progression system</strong>, 
                 allowing you to build a solid foundation before advancing.
               </p>
-            
             </div>
 
           </div>
 
           {/* Book Now Button Section */}
           <div className="book-now-section">
-           <button
-  className="book-now-button"
-  onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
->
-  Book Now
-</button>
+            <button
+              className="book-now-button"
+              onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Book Now
+            </button>
           </div>
 
         </div>
       </div>
-
-   
     </>
   );
 }
