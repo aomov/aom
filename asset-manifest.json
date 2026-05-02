@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/aom/static/css/main.d3fbf0fa.css",
-    "main.js": "/aom/static/js/main.08991b74.js",
+    "main.css": "/aom/static/css/main.c5e24c01.css",
+    "main.js": "/aom/static/js/main.5069e2fd.js",
     "static/media/D-DIN-Italic.otf": "/aom/static/media/D-DIN-Italic.95a6ef2d9bd0881a85b1.otf",
     "static/media/D-DINExp-Italic.otf": "/aom/static/media/D-DINExp-Italic.912cce24edda46cd4126.otf",
     "static/media/D-DINCondensed.otf": "/aom/static/media/D-DINCondensed.7c189af24c6827e918e7.otf",
@@ -11,11 +11,11 @@
     "static/media/D-DINCondensed-Bold.otf": "/aom/static/media/D-DINCondensed-Bold.b6014535a6092a751baa.otf",
     "static/media/D-DINExp-Bold.otf": "/aom/static/media/D-DINExp-Bold.94894a698adbf58b47cb.otf",
     "index.html": "/aom/index.html",
-    "main.d3fbf0fa.css.map": "/aom/static/css/main.d3fbf0fa.css.map",
-    "main.08991b74.js.map": "/aom/static/js/main.08991b74.js.map"
+    "main.c5e24c01.css.map": "/aom/static/css/main.c5e24c01.css.map",
+    "main.5069e2fd.js.map": "/aom/static/js/main.5069e2fd.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3fbf0fa.css",
-    "static/js/main.08991b74.js"
+    "static/css/main.c5e24c01.css",
+    "static/js/main.5069e2fd.js"
   ]
 }
