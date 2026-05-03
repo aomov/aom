@@ -110,9 +110,9 @@ function EventPage() {
         <div className="event-page-hero-content">
           <div className="event-page-hero-top">
             <span className={`event-page-type-badge ${isUpcoming ? 'upcoming' : 'past'}`}>
-              {isUpcoming ? '🔜 Upcoming' : '✅ Past Event'}
+              {isUpcoming ? 'Upcoming' : 'Past Event'}
             </span>
-            {dateStr && <span className="event-page-hero-date">📅 {dateStr}</span>}
+            {dateStr && <span className="event-page-hero-date">{dateStr}</span>}
           </div>
           <h1 className="event-page-title">{event.eventName}</h1>
           <div className="event-page-title-line" />

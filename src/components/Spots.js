@@ -190,8 +190,10 @@ function Spots() {
             <MapContainer
               center={[41.6938, 44.8015]}
               zoom={13}
+              scrollWheelZoom={false}
               style={{ height: '100%', width: '100%' }}
               className="leaflet-map"
+
             >
               {/* Dark Map Tiles */}
               <TileLayer

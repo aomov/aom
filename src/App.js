@@ -19,7 +19,6 @@ function HomePage() {
       <Landing />
       <Parkour />
       <Yoga />
-      <Store />
       <Spots />
       <Events />
       <Pricing />

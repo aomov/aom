@@ -45,10 +45,10 @@ function Events() {
     setCurrentPage(1);
   };
 
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+const handlePageChange = (pageNumber) => {
+  setCurrentPage(pageNumber);
+  document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' });
+};
 
   return (
     <div className='events-body' id='events'>
@@ -104,13 +104,13 @@ function Events() {
                     className='event-image'
                   />
                   <div className='event-type-badge'>
-                    {event.eventType === 'upcoming' ? '🔜 Upcoming' : '✅ Past'}
+                    {event.eventType === 'upcoming' ? 'Upcoming' : 'Past'}
                   </div>
                 </div>
                 <div className='event-content'>
                   <h3 className='event-title'>{event.eventName}</h3>
                   <p className='event-date'>
-                    📅 {new Date(event.eventDate).toLocaleDateString('en-US', {
+                     {new Date(event.eventDate).toLocaleDateString('en-US', {
                       year: 'numeric', month: 'long', day: 'numeric'
                     })}
                   </p>

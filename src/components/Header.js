@@ -40,7 +40,7 @@ function Header() {
   const navItems = [
     { id: 'home',     label: language === 'EN' ? 'Home'       : 'მთავარი'  },
     { id: 'parkour',  label: language === 'EN' ? 'Disciplines': 'პარკური'  },
-    { id: 'store',    label: language === 'EN' ? 'Store'      : 'მაღაზია'  },
+    
     { id: 'spots',    label: language === 'EN' ? 'Spots'      : 'სპოტები'  },
     { id: 'events',   label: language === 'EN' ? 'Events'     : 'ივენთები' },
     { id: 'pricing',  label: language === 'EN' ? 'Book Now'   : 'დაჯავშნა' },

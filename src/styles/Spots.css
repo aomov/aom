@@ -478,3 +478,7 @@
   .spots-right { grid-area: spots-right; }
   .map-container { height: 400px; }
 }
+
+.leaflet-control-attribution{
+  display: none;
+}

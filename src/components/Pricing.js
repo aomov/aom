@@ -123,8 +123,8 @@ const CONTACT = {
   yoga: {
     phone: 'tel:+995558108316',
     phoneLabel: '+995 558 10 83 16',
-    telegram: 'https://t.me/makeursekfcomfortable',
-    telegramLabel: '@makeursekfcomfortable',
+    telegram: 'https://t.me/makeurselfcomfortable',
+    telegramLabel: '@makeurselfcomfortable',
   },
   parkour: {
     phone: 'tel:+995598780220',
@@ -238,10 +238,10 @@ function Pricing() {
           <p>Ready to start? Get in touch and we'll set everything up.</p>
           <div className="pricing-cta-btns">
             <a href={contact.phone} className="pricing-btn pricing-btn--primary">
-              ✆ &nbsp; {contact.phoneLabel}
+             {contact.phoneLabel}
             </a>
             <a href={contact.telegram} target="_blank" rel="noreferrer" className="pricing-btn pricing-btn--ghost">
-              ✈ &nbsp; {contact.telegramLabel}
+             {contact.telegramLabel}
             </a>
           </div>
         </div>
