@@ -70,7 +70,7 @@ function Footer({ language = 'EN', tab = 'yoga' }) {
           <div className="footer-brand">
             <div className="footer-logo">AOM</div>
             <p className="footer-tagline">Move. Create. Expand.</p>
-            <p className="footer-sub">A platform for movement, creativity, and connection. We unite artists, athletes, and creators to share, collaborate, and evolve through experiences that challenge the body and expand the mind.</p>
+            <p className="footer-sub">We unite artists, athletes, and creators to share, collaborate, and evolve through experiences that challenge the body and expand the mind.</p>
           </div>
 
           <nav className="footer-nav">
@@ -118,7 +118,7 @@ function Footer({ language = 'EN', tab = 'yoga' }) {
               {language === 'EN' ? 'Ready?' : 'მზადა?'}
             </span>
             <button className="footer-book-btn" onClick={() => scrollTo('pricing')}>
-              {language === 'EN' ? 'Book Now' : 'დაჯავშნა'}
+              {language === 'EN' ? 'Join us' : 'დაჯავშნა'}
             </button>
             <div className="footer-socials">
               {socials.map(s => (
@@ -135,7 +135,7 @@ function Footer({ language = 'EN', tab = 'yoga' }) {
 
         <div className="footer-bottom">
           <p className="footer-copy">© {new Date().getFullYear()} AOM. All rights reserved.</p>
-          <p className="footer-made">Tbilisi, Georgia 🇬🇪</p>
+          <p className="footer-made">Tbilisi, Georgia</p>
           <p className="footer-copy">
             Designed and developed by{' '}
             <a href="https://apollocreations.net" target="_blank" rel="noreferrer" className="footer-credit-link">
