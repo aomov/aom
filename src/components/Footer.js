@@ -25,7 +25,7 @@ function Footer({ language = 'EN', tab = 'yoga' }) {
     },
     {
       label: 'Telegram',
-      href: 'https://t.me/makeursekfcomfortable',
+      href: 'https://t.me/makeurselfcomfortable',
       icon: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/>
@@ -53,7 +53,7 @@ function Footer({ language = 'EN', tab = 'yoga' }) {
   ];
 
   const contacts = [
-    { phone: 'tel:+995558108316', phoneLabel: '+995 558 10 83 16', telegram: 'https://t.me/makeursekfcomfortable', telegramLabel: '@makeursekfcomfortable' },
+    { phone: 'tel:+995558108316', phoneLabel: '+995 558 10 83 16', telegram: 'https://t.me/makeurselfcomfortable', telegramLabel: '@makeurselfcomfortable' },
     { phone: 'tel:+995598780220', phoneLabel: '+995 598 78 02 20', telegram: 'https://t.me/Ninja_Cheff', telegramLabel: '@Ninja_Cheff' },
   ];
 

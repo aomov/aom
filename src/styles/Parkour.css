@@ -524,6 +524,9 @@
   .info-card h3 { font-size: 1.1rem; }
   .info-card p { font-size: 0.8rem; }
   .book-now-button { font-size: 0.9rem; padding: 14px 35px; }
+  .video-cta{
+    display: none;
+  }
 }
 
 .card-icon-2{
