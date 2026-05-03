@@ -23,7 +23,7 @@ function Landing() {
         <div className="landing-hero">
           <h1 className="hero-title">Move, Create, Expand</h1>
           <p className="hero-subtitle">Find Freedom Through Movement</p>
-          <p className="hero-description">Georgia's First Parkour & Yoga Fusion Experience</p>
+          <p className="hero-description">Portal that connects creative people</p>
           <div className="cta-container">
             <button
               className="cta-button primary"

@@ -8,6 +8,10 @@ const parkourIcon = `${process.env.PUBLIC_URL}/p-icon.png`;
 const yogaIcon = `${process.env.PUBLIC_URL}/p-icon.png`;
 const moveIcon = `${process.env.PUBLIC_URL}/p-icon.png`;
 
+const parkmap = `${process.env.PUBLIC_URL}/parkourmap.png`;
+const yogamap = `${process.env.PUBLIC_URL}/yogamap.png`;
+const movemap = `${process.env.PUBLIC_URL}/movementmap.png`;
+
 // Component to update map view when category changes
 function ChangeMapView({ spots }) {
   const map = useMap();
@@ -58,13 +62,13 @@ function Spots() {
   };
 
   const getCategoryIcon = (category) => {
-    switch(category) {
-      case 'yoga': return yogaIcon;
-      case 'parkour': return parkourIcon;
-      case 'movement': return moveIcon;
-      default: return moveIcon;
-    }
-  };
+  switch(category) {
+    case 'yoga': return yogamap;
+    case 'parkour': return parkmap;
+    case 'movement': return movemap;
+    default: return movemap;
+  }
+};
 
   const getSpotCategory = (spotId) => {
     if (spots.yoga.find(s => s.id === spotId)) return 'yoga';
@@ -77,15 +81,15 @@ function Spots() {
   };
 
   // Create custom Leaflet icons with active state
-  const createCustomIcon = (iconUrl, isActive = false) => {
-    return new L.Icon({
-      iconUrl: iconUrl,
-      iconSize: isActive ? [55, 55] : [40, 40],
-      iconAnchor: isActive ? [27.5, 55] : [20, 40],
-      popupAnchor: [0, isActive ? -55 : -40],
-      className: isActive ? 'custom-marker-icon active' : 'custom-marker-icon'
-    });
-  };
+const createCustomIcon = (iconUrl, isActive = false) => {
+  return new L.Icon({
+    iconUrl: iconUrl,
+    iconSize: isActive ? [55, null] : [40, null],
+    iconAnchor: isActive ? [27.5, 55] : [20, 40],
+    popupAnchor: [0, isActive ? -55 : -40],
+    className: isActive ? 'custom-marker-icon active' : 'custom-marker-icon'
+  });
+};
 
   return (
     <div id="spots" className="spots-section">

@@ -1,10 +1,19 @@
 import React, { useState } from 'react'
 import '../styles/Pricing.css'
 
+const price = `${process.env.PUBLIC_URL}/price.png`
+const onlineparkour = `${process.env.PUBLIC_URL}/onlinepriceparkour.png`
+const onlineyoga = `${process.env.PUBLIC_URL}/onlinepriceyoga.png`
+const corporate = `${process.env.PUBLIC_URL}/corpprice.png`
+const group = `${process.env.PUBLIC_URL}/yogaprice.png`
+
+const yoga = `${process.env.PUBLIC_URL}/med.svg`
+const parkour = `${process.env.PUBLIC_URL}/park.svg`
+
 const YOGA_PLANS = [
   {
     id: 'yoga-online',
-    icon: '🧘‍♀️',
+    icon: onlineyoga,
     name: 'Private — Online',
     subtitle: 'Tbilisi & Online',
     pricing: [
@@ -24,7 +33,7 @@ const YOGA_PLANS = [
   },
   {
     id: 'yoga-inperson',
-    icon: '🧘‍♀️',
+    icon: price,
     name: 'Private — In Person',
     subtitle: '1h 20m Sessions',
     hot: true,
@@ -45,7 +54,7 @@ const YOGA_PLANS = [
   },
   {
     id: 'yoga-corporate',
-    icon: '🏢',
+    icon: corporate,
     name: 'Corporate Yoga',
     subtitle: 'Healthier, Focused Teams',
     pricing: [
@@ -66,7 +75,7 @@ const YOGA_PLANS = [
 const PARKOUR_PLANS = [
   {
     id: 'pk-private',
-    icon: '🏃',
+    icon: price,
     name: 'Private Sessions',
     subtitle: 'One-on-One Guidance',
     pricing: [
@@ -84,7 +93,7 @@ const PARKOUR_PLANS = [
   },
   {
     id: 'pk-group',
-    icon: '👥',
+    icon: group,
     name: 'Group Sessions',
     subtitle: 'Train Together',
     hot: true,
@@ -101,7 +110,7 @@ const PARKOUR_PLANS = [
   },
   {
     id: 'pk-online',
-    icon: '💻',
+    icon: onlineparkour,
     name: 'Online Program',
     subtitle: 'Train From Anywhere',
     pricing: [
@@ -139,14 +148,13 @@ function PlanCard({ plan }) {
     <div className="pricing-card">
       {plan.hot && <div className="pricing-hot-badge">Most Popular</div>}
 
-      <div className="pricing-card-header">
-        <span className="pricing-icon">{plan.icon}</span>
-        <div>
-          <h3 className="pricing-name">{plan.name}</h3>
-          <p className="pricing-sub">{plan.subtitle}</p>
-        </div>
-      </div>
-
+     <div className="pricing-card-header">
+  <img src={plan.icon} alt="" className="pricing-icon-img" />
+  <div>
+    <h3 className="pricing-name">{plan.name}</h3>
+    <p className="pricing-sub">{plan.subtitle}</p>
+  </div>
+</div>
       <div className="pricing-prices">
         {plan.pricing.map((p, i) => (
           <div key={i} className="pricing-price-row">
@@ -189,18 +197,18 @@ function Pricing() {
         </div>
 
         <div className="pricing-tabs">
-          <button
-            className={`pricing-tab ${tab === 'yoga' ? 'active' : ''}`}
-            onClick={() => setTab('yoga')}
-          >
-            🧘‍♀️ &nbsp; Yoga
-          </button>
-          <button
-            className={`pricing-tab ${tab === 'parkour' ? 'active' : ''}`}
-            onClick={() => setTab('parkour')}
-          >
-            🏃 &nbsp; Parkour
-          </button>
+         <button
+  className={`pricing-tab ${tab === 'yoga' ? 'active' : ''}`}
+  onClick={() => setTab('yoga')}
+>
+  <img src={yoga} alt="" className="tab-icon" /> Yoga
+</button>
+<button
+  className={`pricing-tab ${tab === 'parkour' ? 'active' : ''}`}
+  onClick={() => setTab('parkour')}
+>
+  <img src={parkour} alt="" className="tab-icon" /> Parkour
+</button>
         </div>
 
         {tab === 'yoga' && (
@@ -210,7 +218,7 @@ function Pricing() {
             </div>
 
             <div className="pricing-extra-bar">
-              <span className="pricing-extra-icon">👥</span>
+              <span className="pricing-extra-icon"><img src={group} alt="group session" className='pricing-icon-img' /></span>
               <div className="pricing-extra-info">
                 <span className="pricing-extra-name">Group Sessions</span>
                 <span className="pricing-extra-note">Studios or outdoor parks · FYSM ZERO + FYSM1 group flow</span>

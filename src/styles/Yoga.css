@@ -275,7 +275,7 @@
 .info-card:hover .card-icon { transform: translateY(-3px); }
 
 .card-icon-img {
-  width: 50px;
+  width: 60px;
   object-fit: contain;
   filter: drop-shadow(0 0 12px rgba(246, 138, 33, 0.4));
   transition: transform 0.3s ease;
