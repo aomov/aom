@@ -432,6 +432,7 @@
   .yoga-content-grid { gap: 40px; }
   .video-frame { padding: 15px; }
   .book-now-button { font-size: 1rem; padding: 16px 40px; letter-spacing: 2px; }
+  .info-card:hover { transform: translateX(0px); }
 }
 
 @media (max-width: 480px) {
@@ -441,6 +442,7 @@
   .info-card h3 { font-size: 1.1rem; }
   .info-card p { font-size: 0.8rem; }
   .book-now-button { font-size: 0.9rem; padding: 14px 35px; }
+  .info-card:hover { transform: translateX(0px); }
 }
 
 /* დაამატე ეს: */

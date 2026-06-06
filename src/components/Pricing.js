@@ -244,14 +244,20 @@ function Pricing() {
 
         <div className="pricing-cta">
           <p>Ready to start? Get in touch and we'll set everything up.</p>
-          <div className="pricing-cta-btns">
-            <a href={contact.phone} className="pricing-btn pricing-btn--primary">
-             {contact.phoneLabel}
-            </a>
-            <a href={contact.telegram} target="_blank" rel="noreferrer" className="pricing-btn pricing-btn--ghost">
-             {contact.telegramLabel}
-            </a>
-          </div>
+         <div className="pricing-cta-btns">
+  <a href={contact.phone} className="pricing-btn pricing-btn--primary">
+    <svg className="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.06 6.06l1.27-.55a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+    </svg>
+    Call
+  </a>
+  <a href={contact.telegram} target="_blank" rel="noreferrer" className="pricing-btn pricing-btn--ghost">
+    <svg className="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 14.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/>
+    </svg>
+    Message Us
+  </a>
+</div>
         </div>
 
       </div>

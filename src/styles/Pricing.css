@@ -517,3 +517,12 @@
   height: 20px;
   object-fit: contain;
 }
+
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
